@@ -45,19 +45,20 @@ app.get("/params", (request, response)=>{
     }
 });
 
-app.post("/params", (request, response)=>{
-    if(request.query.name){
+app.post("/params", (request, response) => {
+    if (request.body.name) {
         response.send({
-            //req.query is a reference to arguments in the POST body
-            message:"Hello, "+request.query.name+"! You sent a POST request"
-        });
-    }else{
-        response.status(400);
+            //req.body is a reference to arguments in the POST body
+            message: "Hello, " + request.body.name + "! You sent a POST Request"
+        })
+    } else {
+        response.status(400)
         response.send({
             message: "Missing required information"
-        });
+        })
     }
-});
+})
+
 
 app.get("/wait", (request, response)=>{
     setTimeout(()=>{
