@@ -31,6 +31,42 @@ app.post("/hello", (request, response)=>{
 });
 
 
+app.get("/params", (request, response)=>{
+    if(request.query.name){
+        response.send({
+            //req.query is a reference to arguments in the POST body
+            message:"Hello, "+request.query.name+"! You sent a GET request"
+        });
+    }else{
+        response.status(400);
+        response.send({
+            message: "Missing required information"
+        });
+    }
+});
+
+app.post("/params", (request, response)=>{
+    if(request.query.name){
+        response.send({
+            //req.query is a reference to arguments in the POST body
+            message:"Hello, "+request.query.name+"! You sent a POST request"
+        });
+    }else{
+        response.status(400);
+        response.send({
+            message: "Missing required information"
+        });
+    }
+});
+
+app.get("/wait", (request, response)=>{
+    setTimeout(()=>{
+        response.send({
+            message:"Thanks for waiting"
+        });
+    }, 5000)
+});
+
 
 
 
