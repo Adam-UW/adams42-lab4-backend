@@ -3,6 +3,7 @@ const express = require('express')
 //Create a new instance of express
 const app = express()
 
+let middleware= require('./utilities/middleware');
 //const hello= require('./routes/hello');
 //app.use('/hello', hello);
 
@@ -14,7 +15,8 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json())
 
 // USING ROUTES 
-app.use('/auth', require('./routes/register'));
+app.use('/auth', require('./routes/login.js'));
+app.use('/auth', require('./routes/register.js'));
 app.use('/hello', require('./routes/hello'));
 app.use('/params', require('./routes/params'));
 app.use('/demosql', require('./routes/demosql'));
