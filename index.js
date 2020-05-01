@@ -10,6 +10,8 @@ let middleware= require('./utilities/middleware');
 
 //let middleware = require('./utilities/middleware')
 
+app.use("/doc", express.static('apidoc'))
+
 const bodyParser = require("body-parser");
 //This allows parsing of the body of POST requests, that are encoded in JSON
 app.use(bodyParser.json())
