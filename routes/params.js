@@ -25,12 +25,8 @@ router.get("/", (request, response) => {
             message: "Hello, " + request.query.name + "! You sent a GET Request"
         })
     } else {
-        response.status(400)
-        response.send({
-            message: "Missing required information"
-        })
-    }
-})
+        response.status(400).send({ message: "Missing required information"})}
+});
 
 /**
  * @api {post} /params Request an message echo with a parameter 
@@ -49,12 +45,8 @@ router.post("/", (request, response) => {
             //req.body is a reference to arguments in the POST body
             message: "Hello, " + request.body.name + "! You sent a POST Request"
         })
-    } else {
-        response.status(400)
-        response.send({
-            message: "Missing required information"
-        })
-    }
-})
+    }  else {
+        response.status(400).send({ message: "Missing required information"})}
+});
 
 module.exports = router

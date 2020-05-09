@@ -1,5 +1,6 @@
 //Get the connection to Heroku Database
 let pool = require('./sql_conn.js')
+let messaging= require('./pushy_utilities')
 
 
 
@@ -30,5 +31,5 @@ function getHash(pw, salt) {
 }
 
 module.exports = { 
-    pool, getHash, sendEmail
+    pool, getHash, messaging
 };
