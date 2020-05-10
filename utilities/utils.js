@@ -1,6 +1,6 @@
 //Get the connection to Heroku Database
 let pool = require('./sql_conn.js')
-let messaging= require('./pushy_utilities')
+let messaging = require('./pushy_utilities.js')
 
 
 

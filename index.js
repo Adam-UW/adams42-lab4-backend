@@ -22,6 +22,9 @@ app.use('/auth', require('./routes/register.js'));
 app.use('/hello', require('./routes/hello'));
 app.use('/params', require('./routes/params'));
 app.use('/demosql', require('./routes/demosql'));
+app.use('/messages', middleware.checkToken, require('./routes/messages.js'))
+app.use('/chats', middleware.checkToken, require('./routes/chats.js'))
+app.use('/auth', middleware.checkToken, require('./routes/pushyregister.js'))
 
 // app
 // .route('/hello/adam')
